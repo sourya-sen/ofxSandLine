@@ -1,8 +1,8 @@
 ofxSandLine
 =====================================
-ofxSandLine is a generative drawing tool based on the [this article](http://inconvergent.net/grains-of-sand/) by Anders Hoff.
+ofxSandLine is a generative drawing tool based on [this article](http://inconvergent.net/grains-of-sand/) by Anders Hoff.
 
-The example-simple-documentation might seem silly but with some very simple blending, it's super easy to generate images like this:
+It might seem super simple but it's super easy to start generating images like this:
 
 ![screenshot0](screenshots/blending0.png)
 ![screenshot1](screenshots/blending1.png)
