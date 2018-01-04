@@ -4,8 +4,8 @@ ofxSandLine is a generative drawing tool based on the [this article](http://inco
 
 The example-simple-documentation might seem silly but with some very simple blending, it's super easy to generate images like this:
 
-![screenshot0](screenshots/screenshot0.png)
-![screenshot1](screenshots/screenshot1.png)
+![screenshot0](screenshots/blending0.png)
+![screenshot1](screenshots/blending1.png)
 
 Installation
 ------------
