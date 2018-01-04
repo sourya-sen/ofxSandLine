@@ -11,11 +11,15 @@ Installation
 ------------
 Put the ofxSandLine folder into your addons folder.
 
+Documentation
+------------
+The `example-simple-documentation` has all the different functions documented.
+
 Compatibility
 ------------
 Tested with 0.9.8 OSX. Should work with Windows and Linux too, if there are any issues, let me know!
 
 Version history
 ------------
-### Version 0.1 (4 Jan 2018):
+#### Version 0.1 (4 Jan 2018):
 Initial release.
