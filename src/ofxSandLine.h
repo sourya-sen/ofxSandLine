@@ -14,6 +14,7 @@ public:
     void draw(int _res);
     
     void setOffset(float _offset);
+    void setOffset(float _o0, float _o1, float _o2, float _o3);
     void setBreadth(float _breadth);
     void forceSetMode(string mode);
     void setColor(ofColor _c);
@@ -27,7 +28,7 @@ private:
     void update(int _res);
     
     ofPoint p1, p2, p3, p4;
-    float offset;
+    float offset [4];
     float breadth;
     int maxSize;
     int maxAlpha;

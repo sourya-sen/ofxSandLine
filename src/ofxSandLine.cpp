@@ -53,8 +53,8 @@ void ofxSandLine::update(int _res){
     }
     
     if(mode == "SAND_MODE_LINE"){
-        p1 += ofVec2f(offset * ofRandomf(), offset * ofRandomf());
-        p4 += ofVec2f(offset * ofRandomf(), offset * ofRandomf());
+        p1 += ofVec2f(offset[0] * ofRandomf(), offset[0] * ofRandomf());
+        p4 += ofVec2f(offset[3] * ofRandomf(), offset[3] * ofRandomf());
         
         getMidPoints(p1, p4);
         
@@ -64,10 +64,10 @@ void ofxSandLine::update(int _res){
     }
     
     if(mode == "SAND_MODE_SPLINE"){
-    p1 += ofVec2f(offset * ofRandomf(), offset * ofRandomf());
-    p2 += ofVec2f(offset * ofRandomf(), offset * ofRandomf());
-    p3 += ofVec2f(offset * ofRandomf(), offset * ofRandomf());
-    p4 += ofVec2f(offset * ofRandomf(), offset * ofRandomf());
+    p1 += ofVec2f(offset[0] * ofRandomf(), offset[0] * ofRandomf());
+    p2 += ofVec2f(offset[1] * ofRandomf(), offset[1] * ofRandomf());
+    p3 += ofVec2f(offset[2] * ofRandomf(), offset[2] * ofRandomf());
+    p4 += ofVec2f(offset[3] * ofRandomf(), offset[3] * ofRandomf());
     }
     
 }
@@ -85,7 +85,18 @@ void ofxSandLine::draw(int _res){
 
 //------------------------------------------------
 void ofxSandLine::setOffset(float _offset){
-    offset = _offset;
+    offset[0] = _offset;
+    offset[1] = _offset;
+    offset[2] = _offset;
+    offset[3] = _offset;
+}
+
+//------------------------------------------------
+void ofxSandLine::setOffset(float _o0, float _o1, float _o2, float _o3){
+    offset[0] = _o0;
+    offset[1] = _o1;
+    offset[2] = _o2;
+    offset[3] = _o3;
 }
 
 //------------------------------------------------
@@ -156,11 +167,15 @@ void ofxSandLine::getMidPoints(ofPoint _p1, ofPoint _p4){
 //------------------------------------------------
 void ofxSandLine::setDefaults(){
     
-    offset = 1.0;
     breadth = 1;
     color = (255, 255, 255);
     maxSize = 1;
     maxAlpha = 64;
+    
+    offset[0] = 1.0;
+    offset[1] = 1.0;
+    offset[2] = 1.0;
+    offset[3] = 1.0;
     
 }
 
