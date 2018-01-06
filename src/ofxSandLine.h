@@ -23,6 +23,8 @@ public:
 
     vector<ofPoint> getPoints();
 
+    void setPoint(int _index, ofPoint _p);
+
 private:
     int res;
     vector<ofPoint> grains;

@@ -73,6 +73,35 @@ void ofxSandLine::update(int _res){
 }
 
 //------------------------------------------------
+void ofxSandLine::setPoint(int _index, ofPoint _p){
+  switch (_index) {
+    case 1:
+    p1 = _p
+    break;
+
+    case 2:
+    p2 = _p;
+    break;
+
+    case 3:
+    p3 = _p;
+    break;
+
+    case 4:
+    p4 = _p;
+    break;
+
+    default:
+    cout << "check if your index is correct" << endl;
+    break;
+  }
+
+
+
+
+}
+
+//------------------------------------------------
 vector<ofPoint> ofxSandLine::getPoints(){
   vector<ofPoint> points;
 
