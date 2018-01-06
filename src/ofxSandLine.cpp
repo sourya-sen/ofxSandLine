@@ -92,7 +92,7 @@ void ofxSandLine::setPoint(int _index, ofPoint _p){
             break;
             
         default:
-            cout << "check if your index is correct" << endl;
+            cout << "Check if your index is correct, 1-2-3-4 acceptable" << endl;
             break;
     }
 }
@@ -101,20 +101,12 @@ void ofxSandLine::setPoint(int _index, ofPoint _p){
 vector<ofPoint> ofxSandLine::getPoints(){
     vector<ofPoint> points;
     
-    if(mode == "SAND_MODE_LINE"){
-        getMidPoints(p1, p4);
-        
-        points.push_back(p1);
-        points.push_back(midPoints[0]);
-        points.push_back(midPoints[1]);
-        points.push_back(p4);
-        
-    } else {
-        points.push_back(p1);
-        points.push_back(p2);
-        points.push_back(p3);
-        points.push_back(p4);
-    }
+    if(mode == "SAND_MODE_LINE") getMidPoints(p1, p4);
+    
+    points.push_back(p1);
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p4);
     
     return points;
     
