@@ -57,9 +57,14 @@ public:
     ofxSandTriangle(ofPoint _p1, ofPoint _p2, ofPoint _p3);
     
     void draw(int _res);
-    void setOffsets(int _edge, float _o0, float _o1, float _o2, float _o3);
+    void setOffset(int _edge, float _o0, float _o1, float _o2, float _o3);
     
     vector<ofPoint> getVertices();
+    
+    void setBreadth(float _b);
+    void setColor(ofColor _c);
+    void setMaxSize(int _maxSize);
+    void setMaxAlpha(int _maxAlpha);
     
 private:
     ofxSandLine a, b, c;

@@ -251,7 +251,7 @@ void ofxSandTriangle::draw(int _res){
     
 }
 //---------------------------------------------------
-void ofxSandTriangle::setOffsets(int _edge, float _o0, float _o1, float _o2, float _o3){
+void ofxSandTriangle::setOffset(int _edge, float _o0, float _o1, float _o2, float _o3){
     
     switch(_edge){
         case 1:
@@ -280,8 +280,42 @@ vector<ofPoint> ofxSandTriangle::getVertices(){
     vertices[2] = c.getPoints()[0];
     
     return vertices;
+
+}
+//---------------------------------------------------
+void ofxSandTriangle::setBreadth(float _b){
+    
+    a.setBreadth(_b);
+    b.setBreadth(_b);
+    c.setBreadth(_b);
     
 }
+
+//---------------------------------------------------
+void ofxSandTriangle::setColor(ofColor _c){
+    a.setColor(_c);
+    b.setColor(_c);
+    c.setColor(_c);
+}
+
+//---------------------------------------------------
+void ofxSandTriangle::setMaxAlpha(int _maxSize){
+    a.setMaxSize(_maxSize);
+    b.setMaxSize(_maxSize);
+    c.setMaxSize(_maxSize);
+    
+}
+
+//---------------------------------------------------
+void ofxSandTriangle::setMaxAlpha(int _maxAlpha){
+    a.setMaxAlpha(_maxAlpha);
+    b.setMaxAlpha(_maxAlpha);
+    c.setMaxAlpha(_maxAlpha);
+    
+}
+
+//---------------------------------------------------
+
 
 
 
