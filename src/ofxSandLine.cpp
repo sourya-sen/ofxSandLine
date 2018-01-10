@@ -218,3 +218,31 @@ void ofxSandLine::setDefaults(){
     offset[3] = 1.0;
 
 }
+
+//--------------------------------------------------
+//--------------------------------------------------
+ofxSandTriangle::ofxSandTriangle(){
+    
+}
+
+//---------------------------------------------------
+ofxSandTriangle::ofxSandTriangle(ofPoint _p1, ofPoint _p2, ofPoint _p3){
+    
+    a = ofxSandLine(_p1, _p2);
+    b = ofxSandLine(_p2, _p3);
+    c = ofxSandLine(_p3, _p1);
+
+}
+
+//---------------------------------------------------
+void ofxSandTriangle::draw(int _res){
+    
+    a.draw(_res);
+    b.draw(_res);
+    c.draw(_res);
+    
+}
+//---------------------------------------------------
+
+
+

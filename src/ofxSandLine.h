@@ -48,3 +48,18 @@ private:
     void setDefaults();
 
 };
+
+//--------------
+
+class ofxSandTriangle : public ofxSandLine{
+    
+public:
+  ofxSandTriangle();
+  ofxSandTriangle(ofPoint _p1, ofPoint _p2, ofPoint _p3);
+
+  void draw(int _res);
+
+private:
+  ofxSandLine a, b, c;
+//  void update(int _res);
+};
