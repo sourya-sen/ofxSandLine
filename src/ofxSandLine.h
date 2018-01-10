@@ -61,6 +61,14 @@ public:
     
     vector<ofPoint> getVertices();
     
+    void setOffset(float _f){
+        cout << "Error: not valid for Triangle" << endl;
+    }
+    
+    void setOffset(float _o0, float _o1, float _o2, float _o3){
+        cout << "Error: not valid for Triangle" << endl;
+    }
+    
     void setBreadth(float _b);
     void setColor(ofColor _c);
     void setMaxSize(int _maxSize);
