@@ -222,12 +222,12 @@ void ofxSandLine::setDefaults(){
 //--------------------------------------------------
 //--------------------------------------------------
 ofxSandTriangle::ofxSandTriangle(){
-    
+
 }
 
 //---------------------------------------------------
 ofxSandTriangle::ofxSandTriangle(ofPoint _p1, ofPoint _p2, ofPoint _p3){
-    
+
     a = ofxSandLine(_p1, _p2);
     b = ofxSandLine(_p2, _p3);
     c = ofxSandLine(_p3, _p1);
@@ -236,23 +236,23 @@ ofxSandTriangle::ofxSandTriangle(ofPoint _p1, ofPoint _p2, ofPoint _p3){
 
 //---------------------------------------------------
 void ofxSandTriangle::draw(int _res){
-    
+
     auto aP = a.getPoints();
     auto bP = b.getPoints();
     auto cP = c.getPoints();
-    
-    b.setPoint(1, aP[3]);
-    c.setPoint(1, bP[3]);
-    a.setPoint(1, cP[3]);
-    
+
+    b.setPoint(1, (bP[0] + aP[3])/2);
+    c.setPoint(1, (cP[0] + bP[3])/2);
+    a.setPoint(1, (aP[0] + cP[3])/2);
+
     a.draw(_res);
     b.draw(_res);
     c.draw(_res);
-    
+
 }
 //---------------------------------------------------
 void ofxSandTriangle::setOffset(int _edge, float _o0, float _o1, float _o2, float _o3){
-    
+
     switch(_edge){
         case 1:
             a.setOffset(_o0, _o1, _o2, _o3);
@@ -271,33 +271,33 @@ void ofxSandTriangle::setOffset(int _edge, float _o0, float _o1, float _o2, floa
 
 //---------------------------------------------------
 void ofxSandTriangle::setOffset(float _f){
-    
+
     a.setOffset(_f);
     b.setOffset(_f);
     c.setOffset(_f);
-    
+
 }
 
 //---------------------------------------------------
 vector<ofPoint> ofxSandTriangle::getVertices(){
-    
+
     vector<ofPoint> vertices;
     vertices.resize(3);
-    
+
     vertices[0] = a.getPoints()[0];
     vertices[1] = b.getPoints()[0];
     vertices[2] = c.getPoints()[0];
-    
+
     return vertices;
 
 }
 //---------------------------------------------------
 void ofxSandTriangle::setBreadth(float _b){
-    
+
     a.setBreadth(_b);
     b.setBreadth(_b);
     c.setBreadth(_b);
-    
+
 }
 
 //---------------------------------------------------
@@ -312,7 +312,7 @@ void ofxSandTriangle::setMaxSize(int _maxSize){
     a.setMaxSize(_maxSize);
     b.setMaxSize(_maxSize);
     c.setMaxSize(_maxSize);
-    
+
 }
 
 //---------------------------------------------------
@@ -320,11 +320,7 @@ void ofxSandTriangle::setMaxAlpha(int _maxAlpha){
     a.setMaxAlpha(_maxAlpha);
     b.setMaxAlpha(_maxAlpha);
     c.setMaxAlpha(_maxAlpha);
-    
+
 }
 
 //---------------------------------------------------
-
-
-
-
