@@ -237,12 +237,51 @@ ofxSandTriangle::ofxSandTriangle(ofPoint _p1, ofPoint _p2, ofPoint _p3){
 //---------------------------------------------------
 void ofxSandTriangle::draw(int _res){
     
+    auto aP = a.getPoints();
+    auto bP = b.getPoints();
+    auto cP = c.getPoints();
+    
+    b.setPoint(1, aP[3]);
+    c.setPoint(1, bP[3]);
+    a.setPoint(1, cP[3]);
+    
     a.draw(_res);
     b.draw(_res);
     c.draw(_res);
     
 }
 //---------------------------------------------------
+void ofxSandTriangle::setOffsets(int _edge, float _o0, float _o1, float _o2, float _o3){
+    
+    switch(_edge){
+        case 1:
+            a.setOffset(_o0, _o1, _o2, _o3);
+            break;
+        case 2:
+            b.setOffset(_o0, _o1, _o2, _o3);
+            break;
+        case 3:
+            c.setOffset(_o0, _o1, _o2, _o3);
+            break;
+        default:
+            cout << "unknow edge" << endl;
+            break;
+    }
+}
+
+//---------------------------------------------------
+vector<ofPoint> ofxSandTriangle::getVertices(){
+    
+    vector<ofPoint> vertices;
+    vertices.resize(3);
+    
+    vertices[0] = a.getPoints()[0];
+    vertices[1] = b.getPoints()[0];
+    vertices[2] = c.getPoints()[0];
+    
+    return vertices;
+    
+}
 
 
 
