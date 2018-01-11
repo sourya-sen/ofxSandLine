@@ -59,6 +59,9 @@ public:
     void draw(int _res);
     void setOffset(int _edge, float _o0, float _o1, float _o2, float _o3);
     
+    void forceSpline();
+    void forceSpline(int _side);
+    
     vector<ofPoint> getVertices();
     
     void setOffset(float _f);
