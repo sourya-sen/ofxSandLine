@@ -36,13 +36,13 @@ void ofApp::setup(){
     //if you don't want it to move away from it's start position, set to 0
     line.setOffset(0);
     //you can also set each of the four points' offset individually by doing
-    spline.setOffset(0, 2, , 2, 1);
+    spline.setOffset(0, 2, 2, 0);
 
     //because a straight line is implicitly being drawn as a spline with some math [;)] there's a way to
     //force it to behave like a spline over time
-    //additionaly a spline can also be set to "SAND_MODE_LINE" but will move the control points away
+    //additionaly a spline can also be set to SAND_MODE_LINE but will move the control points away
     //and make it into a straight line, so maybe not recommended.
-    line.forceSetMode("SAND_MODE_SPLINE"); //note: this actually won't work here because the offset is set to 0;
+    line.setMode(SAND_MODE_SPLINE); //note: this actually won't make a difference here because the offsets for the control points are set to 0 above;
 
 }
 
@@ -50,7 +50,13 @@ void ofApp::setup(){
 void ofApp::update(){
 
     //the draw function calls the update method implicitly, so nothing to do here :)
-
+    
+    auto p = spline.getPoints(); //this returns a vector of 4 ofPoints with the current positions of the start, control and end points
+    
+    //uncomment the next line to see what the getPoints() function returns
+    //cout << p[0] << p[1] << p[2] << p[3] << endl;
+    
+    //it's also possible to set the point individually at any time - check the chaining example.
 }
 
 //--------------------------------------------------------------
