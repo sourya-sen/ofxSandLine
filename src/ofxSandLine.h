@@ -4,6 +4,11 @@
 //inspired by 'Grains of Sand'
 //http://inconvergent.net/grains-of-sand/
 
+enum mode{
+    SAND_MODE_LINE = 0,
+    SAND_MODE_SPLINE = 1
+};
+
 class ofxSandLine {
 public:
     
@@ -16,7 +21,7 @@ public:
     void setOffset(float _offset);
     void setOffset(float _o0, float _o1, float _o2, float _o3);
     void setBreadth(float _breadth);
-    void forceSetMode(string mode);
+    void setMode(mode _mode);
     void setColor(ofColor _c);
     void setMaxSize(int _maxSize);
     void setMaxAlpha(int _maxAlpha);
@@ -38,7 +43,7 @@ private:
     int maxAlpha;
     ofColor color;
     
-    string mode;
+    int mode;
     vector<ofPoint> points;
     vector<ofPoint> makeSpline(ofPoint _p1, ofPoint _p2, ofPoint _p3, ofPoint _p4, int _res);
     

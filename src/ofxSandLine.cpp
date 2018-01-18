@@ -16,7 +16,7 @@ ofxSandLine::ofxSandLine(ofPoint _p1, ofPoint _p2){
     p2 = midPoints[0];
     p3 = midPoints[1];
     
-    mode = "SAND_MODE_LINE";
+    mode = SAND_MODE_LINE;
     
     setDefaults();
 }
@@ -29,7 +29,7 @@ ofxSandLine::ofxSandLine(ofPoint _p1, ofPoint _p2, ofPoint _p3, ofPoint _p4){
     p3 = _p3;
     p4 = _p4;
     
-    mode = "SAND_MODE_SPLINE";
+    mode = SAND_MODE_SPLINE;
     
     setDefaults();
     
@@ -52,7 +52,7 @@ void ofxSandLine::update(int _res){
         grains.push_back(grain_);
     }
     
-    if(mode == "SAND_MODE_LINE"){
+    if(mode == SAND_MODE_LINE){
         p1 += ofVec2f(offset[0] * ofRandomf(), offset[0] * ofRandomf());
         p4 += ofVec2f(offset[3] * ofRandomf(), offset[3] * ofRandomf());
         
@@ -63,7 +63,7 @@ void ofxSandLine::update(int _res){
         
     }
     
-    if(mode == "SAND_MODE_SPLINE"){
+    if(mode == SAND_MODE_SPLINE){
         p1 += ofVec2f(offset[0] * ofRandomf(), offset[0] * ofRandomf());
         p2 += ofVec2f(offset[1] * ofRandomf(), offset[1] * ofRandomf());
         p3 += ofVec2f(offset[2] * ofRandomf(), offset[2] * ofRandomf());
@@ -101,7 +101,7 @@ void ofxSandLine::setPoint(int _index, ofPoint _p){
 vector<ofPoint> ofxSandLine::getPoints(){
     vector<ofPoint> points;
     
-    if(mode == "SAND_MODE_LINE") getMidPoints(p1, p4);
+    if(mode == SAND_MODE_LINE) getMidPoints(p1, p4);
     
     points.push_back(p1);
     points.push_back(p2);
@@ -145,8 +145,8 @@ void ofxSandLine::setBreadth(float _breadth){
 }
 
 //------------------------------------------------
-void ofxSandLine::forceSetMode(string _mode){
-    if((_mode == "SAND_MODE_SPLINE") || (_mode == "SAND_MODE_LINE")){
+void ofxSandLine::setMode(enum mode _mode){
+    if((_mode == SAND_MODE_SPLINE) || (_mode == SAND_MODE_LINE)){
         mode = _mode;
     } else {
         cout << "Wrong mode specified, acceptable modes are SAND_MODE_LINE or SAND_MODE_SPLINE" << endl;
@@ -325,21 +325,21 @@ void ofxSandTriangle::setMaxAlpha(int _maxAlpha){
 
 //---------------------------------------------------
 void ofxSandTriangle::forceSpline(){
-    a.forceSetMode("SAND_MODE_SPLINE");
-    b.forceSetMode("SAND_MODE_SPLINE");
-    c.forceSetMode("SAND_MODE_SPLINE");
+    a.setMode(SAND_MODE_SPLINE);
+    b.setMode(SAND_MODE_SPLINE);
+    c.setMode(SAND_MODE_SPLINE);
 }
 //---------------------------------------------------
 void ofxSandTriangle::forceSpline(int _side){
     switch(_side){
         case 1:
-            a.forceSetMode("SAND_MODE_SPLINE");
+            a.setMode(SAND_MODE_SPLINE);
             break;
         case 2:
-            b.forceSetMode("SAND_MODE_SPLINE");
+            b.setMode(SAND_MODE_SPLINE);
             break;
         case 3:
-            c.forceSetMode("SAND_MODE_SPLINE");
+            c.setMode(SAND_MODE_SPLINE);
             break;
         default:
             cout << "Side specification not valid, use 1, 2 or 3" << endl;
