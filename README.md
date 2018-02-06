@@ -21,5 +21,8 @@ Tested with 0.9.8 OSX. Should work with Windows and Linux too, if there are any 
 
 Version history
 ------------
+#### Version 0.2 (6 Feb 2018):
+ofxSandTriangle support.
+
 #### Version 0.1 (4 Jan 2018):
 Initial release.
