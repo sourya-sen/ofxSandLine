@@ -63,17 +63,12 @@ public:
     
     void draw(int _res);
     void setOffset(int _edge, float _o0, float _o1, float _o2, float _o3);
+    void setOffset(float _f);
     
     void forceSpline();
     void forceSpline(int _side);
     
     vector<ofPoint> getVertices();
-    
-    void setOffset(float _f);
-    
-    void setOffset(float _o0, float _o1, float _o2, float _o3){
-        cout << "Error: not valid for Triangle" << endl;
-    }
     
     void setBreadth(float _b);
     void setColor(ofColor _c);
