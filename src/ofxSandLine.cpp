@@ -345,3 +345,113 @@ void ofxSandTriangle::forceSpline(int _side){
             cout << "Side specification not valid, use 1, 2 or 3" << endl;
     }
 }
+
+//---------------------------------------------------
+//---------------------------------------------------
+ofxSandRectangle::ofxSandRectangle(){
+    
+}
+
+//---------------------------------------------------
+ofxSandRectangle::ofxSandRectangle(ofPoint _start, float _width, float _height){
+    
+    ofPoint v1, v2, v3, v4;
+    
+    v1 = _start;
+    v2 = _start + ofPoint(_width, 0);
+    v3 = v2 + ofPoint(0, _height);
+    v4 = v1 + ofPoint(0, _height);
+    
+    a = ofxSandLine(v1, v2);
+    b = ofxSandLine(v2, v3);
+    c = ofxSandLine(v3, v4);
+    d = ofxSandLine(v4, v1);
+}
+
+//---------------------------------------------------
+ofxSandRectangle::ofxSandRectangle(ofPoint _vertex1, ofPoint _vertex2, ofPoint _vertex3, ofPoint _vertex4){
+    a = ofxSandLine(_vertex1, _vertex2);
+    b = ofxSandLine(_vertex2, _vertex3);
+    c = ofxSandLine(_vertex3, _vertex4);
+    d = ofxSandLine(_vertex4, _vertex1);
+}
+//---------------------------------------------------
+void ofxSandRectangle::draw(int _res){
+    
+    auto aP = a.getPoints();
+    auto bP = b.getPoints();
+    auto cP = c.getPoints();
+    auto dP = d.getPoints();
+    
+    b.setPoint(1, (aP[3] + bP[0])/2.0);
+    c.setPoint(1, (bP[3] + cP[0])/2.0);
+    d.setPoint(1, (cP[3] + dP[0])/2.0);
+    a.setPoint(1, (dP[3] + aP[0])/2.0);
+    
+    a.draw(_res);
+    b.draw(_res);
+    c.draw(_res);
+    d.draw(_res);
+}
+//---------------------------------------------------
+void ofxSandRectangle::setOffset(int _edge, float _o0, float _o1, float _o2, float _o3){
+    switch(_edge){
+        case 1:
+            a.setOffset(_o0, _o1, _o2, _o3);
+            break;
+        case 2:
+            b.setOffset(_o0, _o1, _o2, _o3);
+            break;
+        case 3:
+            c.setOffset(_o0, _o1, _o2, _o3);
+            break;
+        case 4:
+            d.setOffset(_o0, _o1, _o2, _o3);
+        default:
+            cout << "unknow edge" << endl;
+            break;
+    }
+    
+}
+//---------------------------------------------------
+void ofxSandRectangle::setOffset(float _f){
+    
+    a.setOffset(_f);
+    b.setOffset(_f);
+    c.setOffset(_f);
+    d.setOffset(_f);
+    
+}
+//---------------------------------------------------
+void ofxSandRectangle::forceSpline(){
+    
+    a.setMode(SAND_MODE_SPLINE);
+    b.setMode(SAND_MODE_SPLINE);
+    c.setMode(SAND_MODE_SPLINE);
+    d.setMode(SAND_MODE_SPLINE);
+    
+}
+//---------------------------------------------------
+void ofxSandRectangle::forceSpline(int _edge){
+    
+    switch(_edge){
+        case 1:
+            a.setMode(SAND_MODE_SPLINE);
+            break;
+        case 2:
+            b.setMode(SAND_MODE_SPLINE);
+            break;
+        case 3:
+            c.setMode(SAND_MODE_SPLINE);
+            break;
+        case 4:
+            d.setMode(SAND_MODE_SPLINE);
+            break;
+        default:
+            cout << "Unknow edge, use 1-2-3-4" << endl;
+    }
+    
+}
+
+
+

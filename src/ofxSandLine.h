@@ -77,5 +77,23 @@ public:
     
 private:
     ofxSandLine a, b, c;
-    //  void update(int _res);
+};
+
+//--------------
+
+class ofxSandRectangle {
+public:
+    ofxSandRectangle();
+    ofxSandRectangle(ofPoint _start, float _width, float _height);
+    ofxSandRectangle(ofPoint _vertex1, ofPoint _vertex2, ofPoint _vertex3, ofPoint _vertex4);
+    
+    void draw(int _res);
+    void setOffset(int _edge, float _o0, float _o1, float _o2, float _o3);
+    void setOffset(float _f);
+    
+    void forceSpline();
+    void forceSpline(int _edge);
+    
+private:
+    ofxSandLine a, b, c, d;
 };
