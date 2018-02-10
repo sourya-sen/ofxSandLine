@@ -56,7 +56,7 @@ private:
 
 //--------------
 
-class ofxSandTriangle : public ofxSandLine{
+class ofxSandTriangle {
 public:
     ofxSandTriangle();
     ofxSandTriangle(ofPoint _p1, ofPoint _p2, ofPoint _p3);
