@@ -369,13 +369,6 @@ ofxSandRectangle::ofxSandRectangle(ofPoint _start, float _width, float _height){
 }
 
 //---------------------------------------------------
-ofxSandRectangle::ofxSandRectangle(ofPoint _vertex1, ofPoint _vertex2, ofPoint _vertex3, ofPoint _vertex4){
-    a = ofxSandLine(_vertex1, _vertex2);
-    b = ofxSandLine(_vertex2, _vertex3);
-    c = ofxSandLine(_vertex3, _vertex4);
-    d = ofxSandLine(_vertex4, _vertex1);
-}
-//---------------------------------------------------
 void ofxSandRectangle::draw(int _res){
     
     auto aP = a.getPoints();
