@@ -93,6 +93,10 @@ public:
     void forceSpline();
     void forceSpline(int _edge);
     
+    void setBreadth(float _b);
+    void setMaxAlpha(int _maxAlpha);
+
+    
 private:
     ofxSandLine a, b, c, d;
 };

@@ -445,6 +445,22 @@ void ofxSandRectangle::forceSpline(int _edge){
     }
     
 }
+//---------------------------------------------------
+void ofxSandRectangle::setBreadth(float _b){
+    
+    a.setBreadth(_b);
+    b.setBreadth(_b);
+    c.setBreadth(_b);
+    d.setBreadth(_b);
+    
+}
+//---------------------------------------------------
+void ofxSandRectangle::setMaxAlpha(int _maxAlpha){
+    a.setMaxAlpha(_maxAlpha);
+    b.setMaxAlpha(_maxAlpha);
+    c.setMaxAlpha(_maxAlpha);
+    d.setMaxAlpha(_maxAlpha);
+}
 
 
 
