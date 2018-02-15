@@ -400,6 +400,7 @@ void ofxSandRectangle::setOffset(int _edge, float _o0, float _o1, float _o2, flo
             break;
         case 4:
             d.setOffset(_o0, _o1, _o2, _o3);
+            break;
         default:
             cout << "unknow edge" << endl;
             break;
