@@ -15,7 +15,7 @@ void ofApp::setup(){
         
         ofxSandLine l_;
         l_ = ofxSandLine(start, end);
-        l_.forceSetMode("SAND_MODE_SPLINE"); //optional
+        l_.setMode(SAND_MODE_SPLINE); //optional
         l_.setOffset(4, 2, 2, 4);
         
         lines.push_back(l_);
@@ -32,10 +32,17 @@ void ofApp::update(){
     for(int i = 0; i < lines.size() - 1; i++){
         
         //getPoints returns all the points of that line
-        auto points = lines[i].getPoints();
+        auto myPoints = lines[i].getPoints();
         
-        //we're setting the first point of the next line to be the last point of the previous.
-        lines[i+1].setPoint(1, points[3]);
+        //get the points of the next line
+        auto nextPoints = lines[i+1].getPoints();
+        
+        //We're setting the first point of the next line as the average between the current lines
+        //last point and the next lines first point
+        
+        auto average = (myPoints[3] + nextPoints[0])/2.0;
+        
+        lines[i+1].setPoint(1, average);
     }
     
 }
