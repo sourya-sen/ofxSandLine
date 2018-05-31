@@ -1,3 +1,5 @@
+[![Build status](https://travis-ci.org/sourya-sen/ofxSandLine.svg?branch=master)](https://travis-ci.org/sourya-sen/ofxSandLine)
+
 ofxSandLine
 =====================================
 ofxSandLine is a generative drawing tool based on [this article](http://inconvergent.net/grains-of-sand/) by Anders Hoff.
